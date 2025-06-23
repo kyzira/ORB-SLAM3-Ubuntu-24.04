@@ -68,8 +68,10 @@ sudo make install
 [source](https://gist.github.com/bharath5673/4295e666cbe654a83226a2549a972c4f#orb-slam-3)
 
 ```shell
-cd ~/Dev git clone https://github.com/UZ-SLAMLab/ORB_SLAM3.git 
-cd ORB_SLAM3sed -i 's/++11/++14/g' CMakeLists.txt
+cd ~/Dev
+git clone https://github.com/UZ-SLAMLab/ORB_SLAM3.git 
+cd ORB_SLAM3
+sed -i 's/++11/++14/g' CMakeLists.txt
 ```
 
 Now Simply just run (if you encounter compiler, try to run the this shell script 2 or 3 more time. It works for me.)
