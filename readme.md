@@ -14,6 +14,7 @@ sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libp
 sudo apt-get install libglew-dev libboost-all-dev libssl-dev
 sudo apt install libepoxy-dev
 sudo apt install libeigen3-dev
+sudo apt install unzip
 ```
 
 ---
