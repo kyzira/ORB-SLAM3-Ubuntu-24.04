@@ -61,6 +61,7 @@ source: [OpenCV 4.6.0 does not compile on Linux Ubuntu 22.04 · Issue #22646 · 
 ### build Pangolin
 
 ```bash
+cd ~
 mkdir Dev
 cd ~/Dev
 git clone https://github.com/stevenlovegrove/Pangolin.git
