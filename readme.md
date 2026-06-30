@@ -17,31 +17,41 @@ sudo apt install libeigen3-dev
 ```
 
 ---
+## Install OpenCV 4.6.0
 
-### build OpenCV 4.6.0
+```bash
+# 1. Go to your home directory
+cd ~
 
-1. Download the Opencv4.6.0 release from [Release OpenCV 4.6.0 · opencv/opencv · GitHub](https://github.com/opencv/opencv/releases/tag/4.6.0) (scroll down to Source code.zip file and download the file opencv-4.6.0.zip)
+# 2. Download the OpenCV 4.6.0 source
+wget https://github.com/opencv/opencv/archive/refs/tags/4.6.0.zip -O opencv-4.6.0.zip
 
-2. Unzip the Source code.zip (opencv-4.6.0.zip) at your home directory  
-   Avoid unzipping to a different directory than your home directory.
+# 3. Unzip it (creates the folder opencv-4.6.0)
+unzip opencv-4.6.0.zip
 
-3. `cd opencv` (#get inside the opencv folder)  
-   `mkdir build/`  
-   `cd build/`  
-   `cmake -S .. -B .` (#run cmake using its source (i.e. CMakeLists.txt 
-   which is located in the opencv dir, and building in the build dir which 
-   you are in). Note: don't use any flags/switches running the cmake 
-   command. Just run its most plain version. I found that the job gets done
-   this way. If anything goes wrong, then:  
-   `cd .. ` 
-   `rm -rf build/` (# remove the build/ dir)  
-   and go to step 3) above.
+# 4. Enter the source folder and create a build directory
+cd opencv-4.6.0
+mkdir build
+cd build
 
-4. Now build (i.e. compile) the source of opencv.  
-   `make`
+# 5. Run CMake (no extra flags — the plain version works most reliably)
+cmake -S .. -B .
 
-5. Install the library (where all header files and libraries are taken to their destination as a final step)  
-   `sudo make install` (# you need sudo here because you are writing root privileged directories)
+# 6. Compile (may take several minutes depending on your machine)
+make
+
+# 7. Install (sudo is required to write to system directories)
+sudo make install
+```
+
+If something goes wrong during CMake, delete the build folder and start again from the `mkdir build` step:
+
+```bash
+cd ~/opencv-4.6.0
+rm -rf build
+```
+
+> **Tip:** If `wget` isn't installed, use `curl -L -o opencv-4.6.0.zip https://github.com/opencv/opencv/archive/refs/tags/4.6.0.zip` instead.
 
 source: [OpenCV 4.6.0 does not compile on Linux Ubuntu 22.04 · Issue #22646 · opencv/opencv · GitHub](https://github.com/opencv/opencv/issues/22646)
 
